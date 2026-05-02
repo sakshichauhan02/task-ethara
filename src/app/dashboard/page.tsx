@@ -54,7 +54,7 @@ export default async function DashboardPage() {
         <div className={styles.headerContent}>
           <h1 className="animate-reveal">Quantum Dashboard</h1>
           <p className="animate-reveal" style={{ animationDelay: "0.1s" }}>
-            Welcome back, {session?.user?.name.split(' ')[0]}. Systems are optimal.
+            Welcome back, {session?.user?.name?.split(' ')[0] || 'User'}. Systems are optimal.
           </p>
         </div>
         <div className={styles.actions}>
