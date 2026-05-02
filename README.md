@@ -59,12 +59,3 @@ Ensure you provide the following environment variables on Railway:
 - `NEXTAUTH_SECRET`
 - `NEXTAUTH_URL` (Your live URL)
 
-## 📦 Submission Details
-
-- **Live URL**: [Link will be provided upon deployment]
-- **GitHub Repo**: [Link will be provided]
-- **README**: This file.
-- **Demo Video**: [Link will be provided]
-
----
-Built with ❤️ by Antigravity AI
