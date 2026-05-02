@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          Task <span>Manager</span>
+          Ethara <span>AI</span>
         </Link>
         <div className={styles.links}>
           <Link href="/login" className={styles.loginBtn}>Login</Link>
