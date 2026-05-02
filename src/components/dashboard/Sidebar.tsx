@@ -34,7 +34,7 @@ export default function Sidebar({ user }: { user: any }) {
         <div className={styles.logoIcon}>
           <Zap size={24} fill="white" />
         </div>
-        <span>Task Manager</span>
+        <span>Ethara AI</span>
       </div>
 
       <nav className={styles.nav}>
