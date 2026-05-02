@@ -1,121 +1,148 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
+  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .filterBar {
   display: flex;
-  gap: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 18px;
+  width: fit-content;
+  border: 1px solid var(--border);
 }
 
 .filterBar button {
   background: transparent;
   border: none;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  transition: all 0.2s;
+  padding: 0.6rem 1.25rem;
+  border-radius: 14px;
+  transition: all 0.3s ease;
 }
 
 .filterBar button:hover {
-  color: var(--foreground);
-  background: #f1f5f9;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .activeFilter {
-  color: var(--accent) !important;
-  background: rgba(16, 185, 129, 0.1) !important;
+  background: var(--bg-card-hover) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .taskItem {
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1rem;
+  border-radius: 24px;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  gap: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .taskItem:hover {
-  transform: translateX(4px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background: var(--bg-card-hover);
+  border-color: var(--primary);
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .taskStatus {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 40px;
 }
 
-.doneIcon { color: #10b981; }
-.progressIcon { color: #f59e0b; }
-.todoIcon { color: #94a3b8; }
+.doneIcon { color: var(--completed); filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.3)); }
+.progressIcon { color: var(--primary); filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.3)); }
+.todoIcon { color: var(--text-muted); }
 
 .taskContent {
   flex: 1;
 }
 
 .taskContent h4 {
-  color: var(--foreground);
+  color: #fff;
   margin-bottom: 0.4rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .taskMeta {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.8rem;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
 .priority {
-  padding: 0.1rem 0.5rem;
-  border-radius: 4px;
-  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 8px;
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 0.7rem;
+  letter-spacing: 0.05em;
 }
 
-.low { background: rgba(16, 185, 129, 0.1); color: #059669; }
-.medium { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
-.high { background: rgba(239, 68, 68, 0.1); color: #dc2626; }
+.low { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.medium { background: rgba(139, 92, 246, 0.1); color: var(--primary); }
+.high { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
 
-.assignee, .dueDate {
-  color: var(--text-secondary);
+.assigneeCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dueDate {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .menuBtn {
   background: transparent;
   border: none;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: color 0.2s;
+  padding: 0.75rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 .menuBtn:hover {
-  color: var(--foreground);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .empty {
-  padding: 3rem;
+  padding: 5rem;
   text-align: center;
-  color: var(--text-secondary);
-  background: #f8fafc;
-  border-radius: 12px;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 2px dashed var(--border);
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
 }

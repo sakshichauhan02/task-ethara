@@ -25,7 +25,7 @@ export default async function ProjectsPage() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <div>
+        <div className={styles.headerContent}>
           <h1>Projects</h1>
           <p>Manage and track all your team's projects.</p>
         </div>
@@ -57,7 +57,7 @@ export default async function ProjectsPage() {
           </Link>
         ))}
         {projects.length === 0 && (
-          <div className={styles.emptyState}>
+          <div className={`${styles.emptyState} animate-reveal`}>
             <p>No projects found. Create your first project to get started!</p>
           </div>
         )}

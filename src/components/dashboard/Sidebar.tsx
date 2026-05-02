@@ -8,7 +8,8 @@ import {
   CheckSquare, 
   Users, 
   Settings, 
-  LogOut 
+  LogOut,
+  Zap
 } from "lucide-react";
 import { signOut } from "next-auth/react";
 import styles from "./Sidebar.module.css";
@@ -30,7 +31,10 @@ export default function Sidebar({ user }: { user: any }) {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logo}>
-        Task <span>Manager</span>
+        <div className={styles.logoIcon}>
+          <Zap size={24} fill="white" />
+        </div>
+        <span>Task Manager</span>
       </div>
 
       <nav className={styles.nav}>
@@ -40,7 +44,7 @@ export default function Sidebar({ user }: { user: any }) {
             href={item.href}
             className={`${styles.navItem} ${pathname === item.href ? styles.active : ""}`}
           >
-            <item.icon size={20} />
+            <item.icon size={26} />
             <span>{item.name}</span>
           </Link>
         ))}
@@ -57,7 +61,7 @@ export default function Sidebar({ user }: { user: any }) {
           </div>
         </div>
         <button className={styles.logoutBtn} onClick={() => signOut()}>
-          <LogOut size={20} />
+          <LogOut size={24} />
           <span>Logout</span>
         </button>
       </div>

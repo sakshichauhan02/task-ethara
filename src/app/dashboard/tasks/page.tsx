@@ -28,8 +28,10 @@ export default async function MyTasksPage() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1>My Tasks</h1>
-        <p>All tasks assigned to you across all projects.</p>
+        <div className={styles.headerContent}>
+          <h1>My Tasks</h1>
+          <p>All tasks assigned to you across all projects.</p>
+        </div>
       </header>
 
       <div className={styles.mainContent}>
